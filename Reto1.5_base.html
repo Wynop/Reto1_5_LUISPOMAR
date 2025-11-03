@@ -1,72 +1,198 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario de prueba de HTML5</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-        }
-        form {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        fieldset {
-            border: none;
-            margin-bottom: 20px;
-        }
-        legend {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
-            color: #333;
-        }
-        input, textarea, select, button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1em;
-        }
-        input[type="file"], button, input[type="reset"] {
-            width: auto;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            border: none;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        input[type="reset"] {
-            background-color: #f44336;
-            color: white;
-        }
-        input[type="reset"]:hover {
-            background-color: #e53935;
-        }
-        progress {
-            width: 100%;
-            height: 20px;
-        }
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f7f7f7;
+      }
+      form {
+          max-width: 600px;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+      }
+      h1 {
+          text-align: center;
+          color: #333;
+      }
+      fieldset {
+          border: none;
+          margin-bottom: 20px;
+      }
+      legend {
+          font-weight: bold;
+          margin-bottom: 10px;
+      }
+      label {
+          display: block;
+          margin: 10px 0 5px;
+          font-weight: bold;
+          color: #333;
+      }
+      input, textarea, select, button {
+          width: 100%;
+          padding: 10px;
+          margin-top: 5px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 1em;
+      }
+      input[type="file"], button, input[type="reset"] {
+          width: auto;
+      }
+      button {
+          background-color: #4CAF50;
+          color: white;
+          cursor: pointer;
+          border: none;
+      }
+      button:hover {
+          background-color: #45a049;
+      }
+      input[type="reset"] {
+          background-color: #f44336;
+          color: white;
+      }
+      input[type="reset"]:hover {
+          background-color: #e53935;
+      }
+      progress {
+          width: 100%;
+          height: 20px;
+      }
     </style>
-</head>
+  </head>
 
+  <body>
+    <h1>Formulario de Prueba de HTML5</h1>
+
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Datos personales</legend>
+
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,50}"
+          title="Debe contener entre 3 y 50 letras (solo caracteres alfabéticos y espacios)"
+          required
+          autofocus
+        />
+
+        <label for="email">Correo electrónico:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          title="Introduce un correo electrónico válido"
+          required
+        />
+
+        <label for="web">Página web personal (opcional):</label>
+        <input
+          type="url"
+          id="web"
+          name="web"
+          title="Introduce la URL completa (ejemplo: https://www.ejemplo.es)"
+        />
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required />
+
+        <label for="telefono">Teléfono:</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          pattern="^\\+?[0-9]{7,15}$"
+          title="Debe contener entre 7 y 15 dígitos, puede incluir el prefijo internacional (+)"
+          required
+        />
+
+        <label for="cp">Código Postal:</label>
+        <input
+          type="text"
+          id="cp"
+          name="cp"
+          pattern="^[0-9]{5}$"
+          title="Debe contener exactamente 5 dígitos"
+          required
+        />
+
+        <label for="numero">Número (-10 a 10):</label>
+        <input
+          type="number"
+          id="numero"
+          name="numero"
+          min="-10"
+          max="10"
+          required
+        />
+
+        <label for="busqueda">Búsqueda:</label>
+        <input
+          type="search"
+          id="busqueda"
+          name="busqueda"
+          placeholder="Buscar..."
+        />
+
+        <label for="color">Color favorito:</label>
+        <input type="color" id="color" name="color" />
+
+        <label for="texto">Texto adicional:</label>
+        <textarea
+          id="texto"
+          name="texto"
+          maxlength="100"
+          rows="4"
+          placeholder="Escribe un texto adicional (máx. 100 caracteres)"
+          required
+        ></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Opciones adicionales</legend>
+
+        <label for="opciones">Selecciona una o más opciones:</label>
+        <select
+          id="opciones"
+          name="opciones[]"
+          multiple
+          size="5"
+          title="Usa Ctrl o Shift para seleccionar varias opciones"
+        >
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+          <option value="opcion3">Opción 3</option>
+          <option value="opcion4">Opción 4</option>
+          <option value="opcion5">Opción 5</option>
+        </select>
+
+        <label for="fotos">Sube tus fotos (solo JPEG):</label>
+        <input
+          type="file"
+          id="fotos"
+          name="fotos[]"
+          accept=".jpg, .jpeg"
+          multiple
+          title="Selecciona una o varias imágenes en formato JPEG"
+        />
+
+        <label>Progreso:</label>
+        <progress value="50" max="100">50%</progress>
+      </fieldset>
+
+      <button type="submit">Enviar formulario</button>
+      <input type="reset" value="Restablecer" />
+    </form>
+  </body>
 </html>

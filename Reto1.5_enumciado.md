@@ -1,5 +1,5 @@
 # Reto 1.5: Formulario
-Nombre y Apellidos:
+Nombre y Apellidos: Luis Pomar Rodríguez
 URL del repositorio de gitlab:
 ## Instrucciones:
 Crea una página web que contenga un formulario con los siguientes campos de información, conservando los datos del fichero Reto1.5_base.html:
